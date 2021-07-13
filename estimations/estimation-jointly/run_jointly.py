@@ -24,7 +24,7 @@ adapter_kwargs["params"] = params_start
 
 # Setup 
 adapter_smm = SimulationBasedEstimationCls(**adapter_kwargs)
-np.testing.assert_almost_equal(adapter_smm.fval, 45810.650446)
+np.testing.assert_almost_equal(adapter_smm.fval, 19200.9941407118)
 
 # Estimation
 opt_kwargs = dict()
@@ -36,4 +36,4 @@ opt_kwargs["maxfun"] = 1
 x0, bounds = prepare_optimizer_interface(params_start)
 p_wrapper_numpy = partial(wrapper_numpy, params_start, adapter_smm)
 rslt = pybob.solve(p_wrapper_numpy, x0, bounds=bounds, **opt_kwargs)
-np.testing.assert_almost_equal(adapter_smm.fval, 45810.650446)
+np.testing.assert_almost_equal(adapter_smm.fval, 19200.9941407118)
