@@ -24,14 +24,14 @@ adapter_kwargs["params"] = params_start
 
 # Setup 
 adapter_smm = SimulationBasedEstimationCls(**adapter_kwargs)
-np.testing.assert_almost_equal(adapter_smm.fval, 19200.9941407118)
+np.testing.assert_almost_equal(adapter_smm.fval, 16163.677198640702)
 
 # Estimation
 opt_kwargs = dict()
 opt_kwargs["scaling_within_bounds"] = True
 opt_kwargs["seek_global_minimum"] = True
 opt_kwargs["objfun_has_noise"] = True
-opt_kwargs["maxfun"] = 100000
+opt_kwargs["maxfun"] = 1
 
 x0, bounds = prepare_optimizer_interface(params_start)
 p_wrapper_numpy = partial(wrapper_numpy, params_start, adapter_smm)
