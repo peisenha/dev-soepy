@@ -31,7 +31,7 @@ opt_kwargs = dict()
 opt_kwargs["scaling_within_bounds"] = True
 opt_kwargs["seek_global_minimum"] = True
 opt_kwargs["objfun_has_noise"] = True
-opt_kwargs["maxfun"] = 1
+opt_kwargs["maxfun"] = 100000
 
 x0, bounds = prepare_optimizer_interface(params_start)
 p_wrapper_numpy = partial(wrapper_numpy, params_start, adapter_smm)
